@@ -7,9 +7,16 @@
 
 
   <p *ngIf="loading" class="text-center text-lg">Loading...</p>
+
      <!--Цикл-->
-  <app-product *ngFor="let product of products; let i = index"
-               [product]="product">
+<!--  <app-product-->
+<!--    *ngFor="let product of products; let i = index"-->
+<!--               [product]="product">-->
+<!--  </app-product>-->
+
+  <app-product
+    *ngFor="let product of products$ | async; let i = index"
+    [product]="product">
   </app-product>
 
 </div>
